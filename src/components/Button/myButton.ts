@@ -7,7 +7,10 @@ export const MyButton = styled.button`
   padding: 13px 10px;
   font-weight: 400;
   font-size: 24px;
-  &:hover {
+  &:hover:not(:disabled) {
     cursor: pointer;
+  }
+  &:disabled {
+    opacity: 0.5;
   }
 `;

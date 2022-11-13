@@ -1,5 +1,13 @@
 import { MyButton } from "./myButton";
 
-export const Button = () => {
-  return <MyButton>Ohhhoooo 🍻</MyButton>;
+interface IProps {
+  isDisabled: boolean;
+}
+
+export const Button = ({ isDisabled }: IProps) => {
+  return (
+    <MyButton type="submit" disabled={isDisabled}>
+      Ohhhoooo 🍻
+    </MyButton>
+  );
 };

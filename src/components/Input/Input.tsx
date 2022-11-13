@@ -1,9 +1,21 @@
+import { ChangeEvent } from "react";
 import { StyledInput } from "./styledInput";
 
 interface IProps {
   placeholder: string;
+  onChange: (value: string) => void;
 }
 
-export const Input = ({ placeholder }: IProps) => {
-  return <StyledInput type="number" placeholder={placeholder} />;
+export const Input = ({ placeholder, onChange }: IProps) => {
+  const handleInput = (event: ChangeEvent<HTMLInputElement>): void => {
+    onChange(event.target.value);
+  };
+
+  return (
+    <StyledInput
+      type="number"
+      placeholder={placeholder}
+      onChange={handleInput}
+    />
+  );
 };
