@@ -3,12 +3,12 @@ import { StyledInput } from "./styledInput";
 
 interface IProps {
   placeholder: string;
-  onChange: (value: string) => void;
+  onChange: (value: number) => void;
 }
 
 export const Input = ({ placeholder, onChange }: IProps) => {
   const handleInput = (event: ChangeEvent<HTMLInputElement>): void => {
-    onChange(event.target.value);
+    onChange(+event.target.value);
   };
 
   return (

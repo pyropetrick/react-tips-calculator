@@ -1,34 +1,29 @@
-import Select, { OnChangeValue, ActionMeta, StylesConfig } from "react-select";
+import Select, { OnChangeValue, ActionMeta } from "react-select";
 import { ISelectOption } from "../../types/types";
+import { selectStyles } from "./styledSelect";
 
 interface IProps {
-  onSelect: (value: string) => void;
-  value: string;
+  setTips: (value: number) => void;
+  value: number;
 }
 
-export const CustomSelect = ({ onSelect, value }: IProps) => {
+export const CustomSelect = ({ setTips, value }: IProps) => {
   const options: ISelectOption[] = [
-    { value: "10", label: "10%" },
-    { value: "15", label: "15%" },
-    { value: "20", label: "20%" },
+    { value: 10, label: "10%" },
+    { value: 15, label: "15%" },
+    { value: 20, label: "20%" },
   ];
 
   function handleSelect(
     newValue: OnChangeValue<ISelectOption, boolean>,
     actionMeta: ActionMeta<ISelectOption>
   ): void {
-    onSelect((newValue as ISelectOption).value);
+    setTips((newValue as ISelectOption).value);
   }
-  const getValue = (value: string): ISelectOption | undefined => {
-    return value ? options.find((option) => option.value === value) : undefined;
+  const getValue = (value: number): ISelectOption | undefined => {
+    return options.find((option) => option.value === value);
   };
 
-  const selectStyles: StylesConfig<ISelectOption, false> = {
-    control: (styles) => ({
-      ...styles,
-      textAlign: "center",
-    }),
-  };
   return (
     <Select
       styles={selectStyles}

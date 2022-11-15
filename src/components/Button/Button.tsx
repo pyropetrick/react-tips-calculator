@@ -1,4 +1,4 @@
-import { MyButton } from "./myButton";
+import { StyledButton } from "./styledButton";
 
 interface IProps {
   isDisabled: boolean;
@@ -6,8 +6,8 @@ interface IProps {
 
 export const Button = ({ isDisabled }: IProps) => {
   return (
-    <MyButton type="submit" disabled={isDisabled}>
+    <StyledButton type="submit" disabled={isDisabled}>
       Ohhhoooo 🍻
-    </MyButton>
+    </StyledButton>
   );
 };

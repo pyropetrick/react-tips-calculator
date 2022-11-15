@@ -1,7 +1,7 @@
 import { ActionMeta, OnChangeValue } from "react-select";
 
 export interface ISelectOption {
-  value: string;
+  value: number;
   label: string;
 }
 export interface ISelectProps {
