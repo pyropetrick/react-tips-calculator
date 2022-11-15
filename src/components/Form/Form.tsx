@@ -19,7 +19,7 @@ export const Form = () => {
   };
   useEffect(
     () =>
-      bill && persons && tips && +bill > 0 && +persons > 0
+      bill && persons && tips && bill > 0 && persons > 0
         ? toogleDisabled(false)
         : toogleDisabled(true),
     [bill, persons, tips]
